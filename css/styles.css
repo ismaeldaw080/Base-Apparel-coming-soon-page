@@ -232,13 +232,15 @@ footer {
 
     @media (max-width: 425px){
         #seccion_izquierda {
-            margin-left: 25px;
+            margin-left: 0px;
+            padding: 0px;
         }
     }
 
     @media (max-width: 320px){
         #seccion_izquierda {
-            margin-left: 42px;
+            margin-left: 0px;
+            padding: 0px;
         }
     }
 }
