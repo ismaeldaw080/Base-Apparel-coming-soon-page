@@ -232,9 +232,5 @@ footer {
 
     
 
-    @media (max-width: 320px){
-        #seccion_izquierda {
-            margin-left: 42px;
-        }
-    }
+    
 }
