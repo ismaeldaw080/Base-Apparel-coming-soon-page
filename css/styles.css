@@ -1,0 +1,244 @@
+/*
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Desaturated Red: hsl(0, 36%, 70%)
+- Soft Red: hsl(0, 93%, 68%)
+
+### Neutral
+
+- Dark Grayish Red: hsl(0, 6%, 24%)
+
+### Gradients
+
+- Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 16px
+
+### Font
+
+- Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+- Weights: 300, 400, 600
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+:root {
+    /* ### Colores Primarios ### */
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    /* ### Colores Neutrales ### */
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+    /* ### Colores Degradados ### */
+    --Linear-gradient: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --Linear-gradient2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    /* ### Tipografía ### */
+    --Font-size: 16px;
+    --Family: "Josefin Sans", sans-serif;
+    /* - Weights: 300, 400, 600 */
+    --Normal-font: 300;
+    --Semibold-font: 400;
+    --Bold-font: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--Family);
+    overflow-x: hidden;
+}
+
+#logo_cabecera_movil{
+    display: none;
+}
+
+#logo_cabecera_ordenador{
+    display: block;
+}
+
+#contenedor_estructura {
+    background-color: var(--linear2);
+    min-height: 100vh;
+    display: flex;
+    min-width: 100vw;
+}
+
+#seccion_izquierda {
+    width: 60%;
+    padding: 0px 60px 0px 60px;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-size: cover;
+}
+
+#seccion_derecha {
+    width: 40%;
+}
+
+.imagen_fondo_chica {
+    background-image: url("../images/hero-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#logo {
+    height: 40px;
+    margin: 60px 0px 90px 0px;
+    margin-bottom: 90px;
+}
+
+h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+    color: var(--Dark-Grayish-Red);
+    letter-spacing: 15px;
+}
+
+h1>span {
+    color: var(--Desaturated-Red);
+    font-weight: var(--Normal-font);
+}
+
+p {
+    color: var(--Desaturated-Red);
+    line-height: 30px;
+    margin: 25px 0;
+    font-size: var(--Normal-font);
+}
+
+#formulario_estructura {
+    position: relative;
+}
+
+#input_email {
+    background-color: transparent;
+    border: 1px solid var(--Desaturated-Red);
+    padding: 15px 30px;
+    width: 100%;
+    font-size: var(--Bold-font);
+    border-radius: 50px;
+    height: 55px;
+    outline: none;
+}
+
+#boton_enviar_formulario {
+    position: absolute;
+    background-color: hsl(0, 74%, 74%);
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    width: 100px;
+    top: 0;
+    right: 0;
+    height: 55px;
+    transition: 1s;
+}
+
+#boton_enviar_formulario:hover {
+    cursor: pointer;
+    background: hsl(0, 80%, 86%);
+    box-shadow: 0 15px 20px -3px var(--Desaturated-Red);
+    transition: 1s;
+}
+
+#icono_error {
+    display: none;
+    position: absolute;
+    top: 0.9em;
+    right: 115px;
+}
+
+#mensaje_error_email {
+    display: none;
+    color: var(--Desaturated-Red);
+    margin: 10px 0 10px 0;
+}
+
+footer {
+    margin: 20px 0 20px 0;
+}
+
+/* ### Media  Query ###*/
+
+@media (max-width: 740px){
+    #contenedor_estructura {
+        flex-direction: column-reverse;
+        min-height: 0;
+    }
+
+    #seccion_izquierda {
+        width: 100%;
+        margin-top: 100px;
+    }
+
+    #logo_cabecera_movil{
+        display: block;
+        margin: 30px;
+        width: 100%;
+        padding: 0px 60px 0px 60px;
+    }
+    #logo_movil{
+        display: block;
+    }
+
+    #logo{
+        display: none;
+    }
+    #logo_cabecera_ordenador{
+        display: none;
+    }
+
+    #seccion_derecha {
+        width: 100%;
+        height: 485px;
+    }
+    
+    .imagen_fondo_chica {
+        background-image: url("../images/hero-mobile.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    @media (max-width: 425px){
+        #seccion_izquierda {
+            margin-left: 25px;
+        }
+    }
+
+    @media (max-width: 320px){
+        #seccion_izquierda {
+            margin-left: 42px;
+        }
+    }
+}
